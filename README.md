@@ -19,19 +19,18 @@ It's about ...
 
 ...
 
-## Collaborators
+## Team Franbec
 
 It a collaboration between `France` and `Québec, Canada`
 
 **France:**
 
-* Zammoy
-* Whimsical Sheep (Maë)
-* {Placeholder}
-* {Placeholder}
+* Zammoy - graphic designer
+* Whimsical Sheep (Maë) - graphic designer
+* Takar - graphic designer
+* Barh - graphic designer
 
 **Québec:**
 
-* MrBamboo
-* Dreami
-* {Placeholder}
+* MrBamboo - developper
+* Dreami - junior graphic designer

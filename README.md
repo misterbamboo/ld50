@@ -29,8 +29,10 @@ It a collaboration between `France` and `Québec, Canada`
 * Whimsical Sheep (Maë) - graphic designer
 * Takar - graphic designer
 * Barh - graphic designer
+* Sully - sound designer
 
 **Québec:**
 
 * MrBamboo - developper
 * Dreami - junior graphic designer
+* Pavigeant - developper

@@ -1,3 +1,4 @@
+using Assets.GameManagement;
 using Assets.SharedScripts;
 using Assets.Utils;
 using System;
@@ -5,44 +6,82 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ItemCameraDisplay : MonoBehaviour
+namespace Assets.Camera.ItemCamera
 {
-    [SerializeField] GameObject itemPrefab;
-    private GameObject PeakNextItemPrefab()
+    public class ItemCameraDisplay : MonoBehaviour
     {
-        return itemPrefab;
-    }
+        [SerializeField] Transform targetDisplayPosition;
+        private GameObject currentDisplayedItem;
+        private float currentDisplayedItemRotation;
 
-    [SerializeField] Transform targetDisplayPosition;
-    private GameObject currentDisplayedItem;
-    private float currentDisplayedItemRotation;
+        private Dictionary<string, GameObject> cacheDisplayedItems = new Dictionary<string, GameObject>();
 
-    void Start()
-    {
-        NextItemChanged();
-    }
-
-    private void NextItemChanged()
-    {
-        currentDisplayedItemRotation = 0;
-        var prefab = PeakNextItemPrefab();
-        currentDisplayedItem = Instantiate(prefab, targetDisplayPosition.position, targetDisplayPosition.rotation);
-        LayerUtils.SetLayerRecursively(currentDisplayedItem.gameObject, KnownedLayers.ItemCamera);
-
-        if (currentDisplayedItem.GetComponent<Rigidbody>() is Rigidbody rb)
+        void Start()
         {
-            Destroy(rb);
+            GameManager.Instance.InventoryBag.ItemSelected += InventoryBag_ItemSelected;
+            GameManager.Instance.InventoryBag.Use();
         }
-    }
 
-    void Update()
-    {
-        if (currentDisplayedItem == null) return;
+        private void InventoryBag_ItemSelected(object sender, Inventory.Scripts.ItemSelectedEventArgs e)
+        {
+            NextItemChanged();
+        }
 
-        currentDisplayedItemRotation += Time.deltaTime * 90f;
+        private void NextItemChanged()
+        {
+            ResetDisplayedItemRotation();
+            RemoveCurrentCacheItems();
+            DisplayNextItem();
+        }
 
-        var currentRotation = currentDisplayedItem.transform.rotation;
-        var euler = currentDisplayedItem.transform.rotation.eulerAngles;
-        currentDisplayedItem.transform.rotation = Quaternion.Euler(euler.x, currentDisplayedItemRotation, euler.z);
+        private void RemoveCurrentCacheItems()
+        {
+            foreach (var cacheDisplayedItem in cacheDisplayedItems.Values)
+            {
+                cacheDisplayedItem.SetActive(false);
+            }
+        }
+
+        private void DisplayNextItem()
+        {
+            var nextItemPrefab = GameManager.Instance.InventoryBag.Peek();
+            currentDisplayedItem = GetOrCreateInstanceFromPrefab(nextItemPrefab);
+            LayerUtils.SetLayerRecursively(currentDisplayedItem.gameObject, KnownedLayers.ItemCamera);
+            currentDisplayedItem.SetActive(true);
+        }
+
+        private GameObject GetOrCreateInstanceFromPrefab(GameObject prefab)
+        {
+            if (!cacheDisplayedItems.ContainsKey(prefab.name))
+            {
+                cacheDisplayedItems[prefab.name] = CreateNewInstance(prefab);
+            }
+
+            return cacheDisplayedItems[prefab.name];
+        }
+
+        private GameObject CreateNewInstance(GameObject nextItemPrefab)
+        {
+            var instance = Instantiate(nextItemPrefab, targetDisplayPosition.position, targetDisplayPosition.rotation);
+            if (instance.GetComponent<Rigidbody>() is Rigidbody rb)
+            {
+                Destroy(rb);
+            }
+            return instance;
+        }
+
+        private void ResetDisplayedItemRotation()
+        {
+            currentDisplayedItemRotation = 0;
+        }
+
+        void Update()
+        {
+            if (currentDisplayedItem == null) return;
+            currentDisplayedItemRotation += Time.deltaTime * 90f;
+
+            var euler = currentDisplayedItem.transform.rotation.eulerAngles;
+            currentDisplayedItem.transform.rotation = Quaternion.Euler(euler.x, currentDisplayedItemRotation, euler.z);
+        }
     }
 }

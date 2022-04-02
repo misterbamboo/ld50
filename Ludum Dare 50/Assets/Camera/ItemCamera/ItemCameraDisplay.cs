@@ -15,6 +15,7 @@ public class ItemCameraDisplay : MonoBehaviour
 
     [SerializeField] Transform targetDisplayPosition;
     private GameObject currentDisplayedItem;
+    private float currentDisplayedItemRotation;
 
     void Start()
     {
@@ -23,8 +24,9 @@ public class ItemCameraDisplay : MonoBehaviour
 
     private void NextItemChanged()
     {
+        currentDisplayedItemRotation = 0;
         var prefab = PeakNextItemPrefab();
-        currentDisplayedItem = Instantiate(prefab, targetDisplayPosition.position, Quaternion.identity);
+        currentDisplayedItem = Instantiate(prefab, targetDisplayPosition.position, targetDisplayPosition.rotation);
         LayerUtils.SetLayerRecursively(currentDisplayedItem.gameObject, KnownedLayers.ItemCamera);
 
         if (currentDisplayedItem.GetComponent<Rigidbody>() is Rigidbody rb)
@@ -35,10 +37,12 @@ public class ItemCameraDisplay : MonoBehaviour
 
     void Update()
     {
-        if (currentDisplayedItem != null) return;
+        if (currentDisplayedItem == null) return;
+
+        currentDisplayedItemRotation += Time.deltaTime * 90f;
 
         var currentRotation = currentDisplayedItem.transform.rotation;
-        currentRotation.y += Time.deltaTime * 90f;
-        currentDisplayedItem.transform.rotation = currentRotation;
+        var euler = currentDisplayedItem.transform.rotation.eulerAngles;
+        currentDisplayedItem.transform.rotation = Quaternion.Euler(euler.x, currentDisplayedItemRotation, euler.z);
     }
 }

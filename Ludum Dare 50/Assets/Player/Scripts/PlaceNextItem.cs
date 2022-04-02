@@ -1,3 +1,4 @@
+using Assets.GameManagement;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,12 @@ public class PlaceNextItem : MonoBehaviour
 {
     [SerializeField] Transform spawnPoint;
     [SerializeField] GameObject itemPrefab;
+    private object inventoryBag;
+
+    private void Start()
+    {
+        inventoryBag = GameManager.Instance.InventoryBag;
+    }
 
     void Update()
     {

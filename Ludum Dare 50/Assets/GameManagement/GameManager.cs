@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Assets.Inventory.Scripts;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,17 +10,18 @@ namespace Assets.GameManagement
 {
     public interface IGameManager
     {
-        object InventoryBag { get; }
+        IInventoryBag InventoryBag { get; }
     }
 
     public class GameManager : MonoBehaviour, IGameManager
     {
         public static IGameManager Instance { get; private set; }
-
         private void Awake()
         {
             Instance = this;
         }
-        public object InventoryBag => throw new NotImplementedException();
+
+        [SerializeField] InventoryBag inventoryBag;
+        public IInventoryBag InventoryBag => inventoryBag;
     }
 }

@@ -11,5 +11,6 @@ namespace Assets.SharedScripts
     {
         public static int Default = LayerMask.NameToLayer("Default");
         public static int Ground = LayerMask.NameToLayer("Ground");
+        public static int ItemCamera = LayerMask.NameToLayer("ItemCamera");
     }
 }

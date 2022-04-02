@@ -1,4 +1,5 @@
 using Assets.SharedScripts;
+using Assets.Utils;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,25 +16,6 @@ public class StickyItem : MonoBehaviour
             }
         }
 
-        SetLayerRecursively(transform.gameObject, KnownedLayers.Ground);
-    }
-
-    private void SetLayerRecursively(GameObject obj, int newLayer)
-    {
-        if (null == obj)
-        {
-            return;
-        }
-
-        obj.layer = newLayer;
-
-        foreach (Transform child in obj.transform)
-        {
-            if (null == child)
-            {
-                continue;
-            }
-            SetLayerRecursively(child.gameObject, newLayer);
-        }
+        LayerUtils.SetLayerRecursively(transform.gameObject, KnownedLayers.Ground);
     }
 }

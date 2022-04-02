@@ -136,7 +136,7 @@ MonoBehaviour:
   Distance: 10
   AngleXMin: 0
   AngleXMax: 89
-  jumpForce: 100
+  jumpForce: 350
   _groundDetector: {fileID: 5440116103849397064}
 --- !u!114 &329608070
 MonoBehaviour:

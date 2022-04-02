@@ -11,10 +11,11 @@ public class PlaceNextItem : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            var item = Instantiate(itemPrefab, spawnPoint.position, Quaternion.identity);
+            var item = Instantiate(itemPrefab, spawnPoint.position, Random.rotation);
             if (item.GetComponent<Rigidbody>() is Rigidbody rb)
             {
                 rb.AddForce(spawnPoint.forward * 350);
+                rb.AddTorque(Random.rotation.eulerAngles);
             }
         }
     }

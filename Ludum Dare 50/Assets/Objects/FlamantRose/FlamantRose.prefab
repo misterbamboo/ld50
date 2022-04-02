@@ -10,7 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6342906992551654061}
   - component: {fileID: 5411909124005274894}
-  m_Layer: 0
+  - component: {fileID: 1938455463668701141}
+  m_Layer: 7
   m_Name: FlamantRose
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48,6 +49,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1938455463668701141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5057607337798198884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b617857986c3f04dbf3ec6c5e0200aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!64 &1515429903197751109
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -145,10 +158,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: FlamantRose
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 27391eb473bbc2140b70bb8e7457b224, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 4005767924782610493, guid: 27391eb473bbc2140b70bb8e7457b224, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: fb50e573f9a214f469f7ecd4f261d726, type: 2}
+    - target: {fileID: 7913812294717044667, guid: 27391eb473bbc2140b70bb8e7457b224, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27391eb473bbc2140b70bb8e7457b224, type: 3}
 --- !u!4 &2041289420648870955 stripped

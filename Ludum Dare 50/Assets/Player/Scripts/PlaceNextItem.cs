@@ -14,7 +14,7 @@ public class PlaceNextItem : MonoBehaviour
             var item = Instantiate(itemPrefab, spawnPoint.position, Quaternion.identity);
             if (item.GetComponent<Rigidbody>() is Rigidbody rb)
             {
-                rb.AddForce(spawnPoint.forward * 275);
+                rb.AddForce(spawnPoint.forward * 350);
             }
         }
     }

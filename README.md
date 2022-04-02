@@ -8,8 +8,9 @@ The revealed theme of the game jam was: ...
 
 ## Ideas / inspirations
 
-* abc
-* def
+* Tricky Towers
+* Man fall flat
+* The North
 
 ## Game
 

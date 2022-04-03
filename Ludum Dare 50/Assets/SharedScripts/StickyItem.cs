@@ -9,6 +9,8 @@ public class StickyItem : MonoBehaviour
 {
     private void OnCollisionEnter(Collision collision)
     {
+        
+
         if (collision.gameObject.GetComponent<StickyItem>() != null)
         {
             if (transform.GetComponent<Rigidbody>() is Rigidbody rb)
@@ -18,6 +20,7 @@ public class StickyItem : MonoBehaviour
 
             LayerUtils.SetLayerRecursively(transform.gameObject, KnownedLayers.Tower);
             GameManager.Instance.ChangeTowerHeight(transform.position);
+            EffectManager.Instance.SmokePoofAt(collision.contacts[0].point);
         }
     }
 }

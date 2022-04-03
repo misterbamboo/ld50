@@ -11,4 +11,9 @@ public class WaterRaising : MonoBehaviour
             z: transform.position.z
         );
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        EffectManager.Instance.SplashAt(other.transform.position);
+    }
 }

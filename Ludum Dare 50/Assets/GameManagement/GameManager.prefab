@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4990320220383580952}
   - component: {fileID: 2466028316403435371}
   - component: {fileID: 716243349669108220}
+  - component: {fileID: 2307158014998505700}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -94,6 +95,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   floodRaiseSpeed: 0.1
+--- !u!114 &2307158014998505700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5545370133531561619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02b9e4415cbd01d4b82a167d52574a0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  smokePoofPrefab: {fileID: 2053872005967105251, guid: 24d429af8638b4942b6bd2c3a302dc98, type: 3}
+  splashPrefab: {fileID: 1226666550101126119, guid: 7ca2b95d70d03104da45f5d9e115e628, type: 3}
 --- !u!1001 &6207718430388388495
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -1,15 +1,15 @@
-using System;
+
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Assets.Objects.Montgolfiere.Scripts
 {
-    public class MongolfiereMovement : MonoBehaviour
+    public class NuageMouvement : MonoBehaviour
     {
+        [SerializeField] bool printRandomTarget = false;
         [SerializeField] float travelTime = 2f;
         [SerializeField] float distancePerTarget = 2f;
-        [SerializeField] Vector3 Offset = new Vector3(50, 20, 50);
+        [SerializeField] Vector3 Offset = new Vector3(20, 5, 20);
         private Vector3 initialPos;
 
         private Vector3 previousPos;
@@ -55,7 +55,12 @@ namespace Assets.Objects.Montgolfiere.Scripts
             var randomX = UnityEngine.Random.Range(-1f, 1f);
             var randomY = UnityEngine.Random.Range(-1f, 1f);
             var randomZ = UnityEngine.Random.Range(-1f, 1f);
-            return new Vector3(randomX, randomY, randomZ).normalized;
+            var result = new Vector3(randomX, randomY, randomZ).normalized;
+            if (printRandomTarget)
+            {
+                print(result);
+            }
+            return result;
         }
 
         private void FixedUpdate()

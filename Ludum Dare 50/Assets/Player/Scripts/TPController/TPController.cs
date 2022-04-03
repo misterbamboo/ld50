@@ -11,7 +11,7 @@ namespace UPTK.TPController
         [SerializeField] private ICameraInput cameraInput;
         [SerializeField] private Transform cameraTransform;
         [SerializeField] private float Distance = 10;
-        [SerializeField] private float AngleXMin = 0;
+        [SerializeField] private float AngleXMin = 1;
         [SerializeField] private float AngleXMax = 89;
 
         [Header("Movements")]

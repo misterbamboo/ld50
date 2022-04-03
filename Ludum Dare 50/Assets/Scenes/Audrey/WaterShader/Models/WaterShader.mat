@@ -32,6 +32,10 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - FoamTexture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _BaseMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -90,8 +94,9 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - Depth: 0.7
-    - DepthFalloff: 0.73
+    - Depth: 19.2
+    - DepthFalloff: 56.8
+    - FoamShoreWidth: 17.68
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -119,7 +124,8 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - MainColor: {r: 0.34349412, g: 0.6952209, b: 0.7830189, a: 0}
+    - FoamColor: {r: 1, g: 1, b: 1, a: 0}
+    - MainColor: {r: 0.051619805, g: 0.34349763, b: 0.3773585, a: 0}
     - ShoreColor: {r: 1, g: 1, b: 1, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}

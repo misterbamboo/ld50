@@ -1,4 +1,5 @@
 ﻿using Assets.Inventory.Scripts;
+using Assets.Tower;
 using System;
 using UnityEngine;
 
@@ -7,8 +8,12 @@ namespace Assets.GameManagement
     public interface IGameManager
     {
         IInventoryBag InventoryBag { get; }
+        IFloodLevel FloodLevel { get; }
+
         event Action OnGameStart;
         event Action OnGameOver;
+
+        void ChangeTowerHeight(Vector3 newTowerItemPosition);
     }
 
     public class GameManager : MonoBehaviour, IGameManager
@@ -25,6 +30,14 @@ namespace Assets.GameManagement
         [SerializeField] InventoryBag inventoryBag;
         public IInventoryBag InventoryBag => inventoryBag;
 
+        [SerializeField] FloodLevelManager floodLevel;
+        public IFloodLevel FloodLevel => floodLevel;
+
+
+        [SerializeField] TowerHeightDetector towerHeightDetector;
+        public ITowerHeightDetector TowerHeightDetector => towerHeightDetector;
+        
+
         private bool readyToStart;
         private bool gameOver;
 
@@ -34,7 +47,7 @@ namespace Assets.GameManagement
             gameOver = false;
         }
 
-        private float temp_count_down = 5;
+        private float temp_count_down = 5645646456;
         private void Update()
         {
             if (readyToStart)
@@ -62,6 +75,11 @@ namespace Assets.GameManagement
         private void TriggerGameOver()
         {
             OnGameOver?.Invoke();
+        }
+
+        public void ChangeTowerHeight(Vector3 newTowerItemPosition)
+        {
+            TowerHeightDetector.RecalculateHeight(newTowerItemPosition);
         }
     }
 }

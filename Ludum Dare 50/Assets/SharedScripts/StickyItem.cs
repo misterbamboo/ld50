@@ -1,3 +1,4 @@
+using Assets.GameManagement;
 using Assets.SharedScripts;
 using Assets.Utils;
 using System.Collections;
@@ -16,6 +17,7 @@ public class StickyItem : MonoBehaviour
             }
         }
 
-        LayerUtils.SetLayerRecursively(transform.gameObject, KnownedLayers.Ground);
+        LayerUtils.SetLayerRecursively(transform.gameObject, KnownedLayers.Tower);
+        GameManager.Instance.ChangeTowerHeight(transform.position);
     }
 }

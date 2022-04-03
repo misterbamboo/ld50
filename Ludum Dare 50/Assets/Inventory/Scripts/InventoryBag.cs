@@ -13,15 +13,22 @@ namespace Assets.Inventory.Scripts
         private void Start()
         {
             if (inventory == null)
-            {
                 inventory = new List<GameObject>();
-            }
+
             FillInventoryWithRandomItems();
         }
 
         public event ItemSelectedHandler ItemSelected;
 
         public GameObject Peek() => currentItem;
+
+        public void Add(GameObject item)
+        {
+            if (item == null)
+                return;
+
+            inventory?.Add(item);
+        }
 
         public GameObject Use()
         {
@@ -39,7 +46,10 @@ namespace Assets.Inventory.Scripts
         private void FillInventoryWithRandomItems()
         {
             for (int i = 0; i < 10; i++)
-                inventory.Add(possibleItems[UnityEngine.Random.Range(0, possibleItems.Count)]);
+            {
+                var random = UnityEngine.Random.Range(0, possibleItems.Count);
+                Add(possibleItems[random]);
+            }
         }
 
         private GameObject GetNextItem()

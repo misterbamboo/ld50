@@ -16,6 +16,6 @@ public class MusicController : MonoBehaviour
 
     private void Instance_OnGameStart()
     {
-        AudioManager.PlayMusic(KnownedMusics.water_waves_1);
+        AudioManager.PlayMusic(KnownedMusics.night_tense_acoustic);
     }
 }

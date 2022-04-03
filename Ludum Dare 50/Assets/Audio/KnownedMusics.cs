@@ -12,5 +12,8 @@ namespace Assets.Audio
         water_waves_1,
         seagulls_1,
         bump_1,
+        village_sad_acoustic,
+        night_tense_acoustic,
+        adventure_serious_cinematic,
     }
 }

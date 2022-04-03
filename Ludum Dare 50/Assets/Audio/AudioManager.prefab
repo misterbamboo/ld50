@@ -47,21 +47,42 @@ MonoBehaviour:
   - name: bump_1
     clip: {fileID: 8300000, guid: 98e43442f5083a04d9ee73581706ac50, type: 3}
     volume: 0.5
-    pitch: 0
+    pitch: 1
     loop: 0
     source: {fileID: 0}
     playing: 0
   - name: seagulls_1
     clip: {fileID: 8300000, guid: d5fcce7b1351e334cab4d28ccd737b97, type: 3}
     volume: 0.5
-    pitch: 0
+    pitch: 1
     loop: 0
     source: {fileID: 0}
     playing: 0
   - name: water_waves_1
     clip: {fileID: 8300000, guid: 2998b73377e3e894f9d681e3f4605fad, type: 3}
     volume: 0.5
-    pitch: 0
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+    playing: 0
+  - name: night_tense_acoustic
+    clip: {fileID: 8300000, guid: 339a3d62a4885834296135d5ef0cd885, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+    playing: 0
+  - name: adventure_serious_cinematic
+    clip: {fileID: 8300000, guid: 67e9ffc829ca5354e9330e8dd7116df7, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+    playing: 0
+  - name: village_sad_acoustic
+    clip: {fileID: 8300000, guid: 81d710e1ec2e2c747a0eaa3d912176a9, type: 3}
+    volume: 0.5
+    pitch: 1
     loop: 1
     source: {fileID: 0}
     playing: 0

@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5457309621461205225}
+  - component: {fileID: 5031198046130813598}
   m_Layer: 0
   m_Name: "Montgolfi\xE8re"
   m_TagString: Untagged
@@ -31,6 +32,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5031198046130813598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4681371430392437331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c5f964dd2fa5434481f969b1f959429, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  travelTime: 5
+  distancePerTarget: 10
+  Offset: {x: 50, y: 20, z: 50}
 --- !u!1 &8324605304912105490
 GameObject:
   m_ObjectHideFlags: 0
@@ -42,6 +58,7 @@ GameObject:
   - component: {fileID: 1778017657543827674}
   - component: {fileID: 3070971203487347457}
   - component: {fileID: 6581362092342613412}
+  - component: {fileID: 2435444377228306674}
   m_Layer: 0
   m_Name: "Montgolfi\xE8re 1"
   m_TagString: Untagged
@@ -117,3 +134,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &2435444377228306674
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8324605304912105490}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 528388725910282437, guid: c551b1b8cacac55468fc69b280a571fe, type: 3}

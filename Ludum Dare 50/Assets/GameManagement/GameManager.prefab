@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2466028316403435371}
   - component: {fileID: 716243349669108220}
   - component: {fileID: 6133210083110759231}
+  - component: {fileID: 2177188170455793520}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -64,8 +65,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   possibleItems:
+  - {fileID: 8509816744436684030, guid: 694b02fc5279aaa4fb5c43cb22fca6af, type: 3}
+  - {fileID: 1419481856701481191, guid: 89325af2fe9f8ed4abc67203d6c2122a, type: 3}
+  - {fileID: 4256969231987975381, guid: f2c85cf00edbba146b7395bac1634c90, type: 3}
+  - {fileID: 714447896356148986, guid: f718b1d3b6e64904696dd81ee168a681, type: 3}
   - {fileID: 5057607337798198884, guid: ba45ad903624bcc4cb3a826e5a2693ed, type: 3}
-  - {fileID: 997920709342406910, guid: 6b26abc8b7dee354d83626f3a789eed2, type: 3}
+  - {fileID: 8662988514815201572, guid: 3669a82e646a0aa41a6ae0c8bfd31282, type: 3}
+  - {fileID: 4889087690284617130, guid: 8cbe7cb4eb6a7864c8ff406a8766cbb2, type: 3}
+  - {fileID: 1205104519213740511, guid: 8ac4f8554f8ad084db1ddf6f005570b8, type: 3}
+  - {fileID: 753720679177357087, guid: b7d09bdd3abccf046808f0fef23b4f1f, type: 3}
+  - {fileID: 5598607607642960769, guid: e83798ef8303cdb42b00e5aa4e310e41, type: 3}
+  - {fileID: 7481618618663527481, guid: 3b0932a078c200e4998ae862c7f06b50, type: 3}
+  - {fileID: 5894085002978223050, guid: fa6d234d7e94a3c47b450074f2a2910f, type: 3}
+  - {fileID: 2835849293936792900, guid: ae0763e5c1219ff4f9a1cc2d8daf5fa8, type: 3}
+  - {fileID: 363355118886449526, guid: 81d9c9c21cec2b64ba2d64993c2c3c1b, type: 3}
+  - {fileID: 6276062568164876429, guid: 3d496cf2ade7edb4eb8caacb229b1efc, type: 3}
+  - {fileID: 3499048561556094133, guid: 1307bef4b7703a348a577a561134196a, type: 3}
   inventory: []
   currentItem: {fileID: 0}
 --- !u!114 &2466028316403435371
@@ -107,6 +122,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 064ab4921e5e2a64d893481e35e71a9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2177188170455793520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5545370133531561619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02b9e4415cbd01d4b82a167d52574a0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  smokePoofPrefab: {fileID: 2053872005967105251, guid: 24d429af8638b4942b6bd2c3a302dc98, type: 3}
+  splashPrefab: {fileID: 1226666550101126119, guid: 7ca2b95d70d03104da45f5d9e115e628, type: 3}
 --- !u!1001 &6207718430388388495
 PrefabInstance:
   m_ObjectHideFlags: 0

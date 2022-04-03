@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8124635718200668222}
   - component: {fileID: -2916013381471738988}
+  - component: {fileID: 9057237862797922716}
   m_Layer: 0
   m_Name: WaterSurface
   m_TagString: Untagged
@@ -45,7 +46,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d23244378e635e7409ac2c439ab05fb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  raisingSpeed: 0.1
+--- !u!65 &9057237862797922716
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2377432256044000811}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 50, y: 1, z: 50}
+  m_Center: {x: 0, y: -0.5, z: 0}
 --- !u!1 &5841099038368872165
 GameObject:
   m_ObjectHideFlags: 0

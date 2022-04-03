@@ -1,5 +1,3 @@
-using Assets.GameManagement;
-using Assets.Inventory.Scripts;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,23 +5,16 @@ using UnityEngine;
 public class PlaceNextItem : MonoBehaviour
 {
     [SerializeField] Transform spawnPoint;
-    private IInventoryBag inventoryBag;
-
-    private void Start()
-    {
-        inventoryBag = GameManager.Instance.InventoryBag;
-    }
+    [SerializeField] GameObject itemPrefab;
 
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
-            var itemPrefab = inventoryBag.Use();
-            var item = Instantiate(itemPrefab, spawnPoint.position, Random.rotation);
+            var item = Instantiate(itemPrefab, spawnPoint.position, Quaternion.identity);
             if (item.GetComponent<Rigidbody>() is Rigidbody rb)
             {
-                rb.AddForce(spawnPoint.forward * 350);
-                rb.AddTorque(Random.rotation.eulerAngles);
+                rb.AddForce(spawnPoint.forward * 275);
             }
         }
     }

@@ -6,6 +6,11 @@ namespace Assets.Inventory.Scripts
     public interface IInventoryBag
     {
         /// <summary>
+        /// Ajoute un item à fin de l'inventaire.
+        /// </summary>
+        void Add(GameObject item);
+
+        /// <summary>
         /// Retourne l'item choisi sans le faire disparaître de l'inventaire.
         /// </summary>
         GameObject Peek();

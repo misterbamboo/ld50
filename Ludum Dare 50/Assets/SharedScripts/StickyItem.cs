@@ -9,8 +9,6 @@ public class StickyItem : MonoBehaviour
 {
     private void OnCollisionEnter(Collision collision)
     {
-        
-
         if (collision.gameObject.GetComponent<StickyItem>() != null)
         {
             if (transform.GetComponent<Rigidbody>() is Rigidbody rb)

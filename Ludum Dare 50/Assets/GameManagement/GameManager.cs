@@ -36,7 +36,7 @@ namespace Assets.GameManagement
 
         [SerializeField] TowerHeightDetector towerHeightDetector;
         public ITowerHeightDetector TowerHeightDetector => towerHeightDetector;
-        
+
 
         private bool readyToStart;
         private bool gameOver;
@@ -47,7 +47,6 @@ namespace Assets.GameManagement
             gameOver = false;
         }
 
-        private float temp_count_down = 5645646456;
         private void Update()
         {
             if (readyToStart)
@@ -58,8 +57,7 @@ namespace Assets.GameManagement
 
             if (!gameOver)
             {
-                temp_count_down -= Time.deltaTime;
-                if (temp_count_down < 0)
+                if (FloodLevel.FloodHeight > towerHeightDetector.TowerHeight)
                 {
                     gameOver = true;
                     TriggerGameOver();

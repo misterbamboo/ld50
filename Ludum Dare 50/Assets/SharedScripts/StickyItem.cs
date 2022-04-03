@@ -15,9 +15,9 @@ public class StickyItem : MonoBehaviour
             {
                 rb.isKinematic = true;
             }
-        }
 
-        LayerUtils.SetLayerRecursively(transform.gameObject, KnownedLayers.Tower);
-        GameManager.Instance.ChangeTowerHeight(transform.position);
+            LayerUtils.SetLayerRecursively(transform.gameObject, KnownedLayers.Tower);
+            GameManager.Instance.ChangeTowerHeight(transform.position);
+        }
     }
 }

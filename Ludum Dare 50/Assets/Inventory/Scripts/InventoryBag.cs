@@ -25,10 +25,11 @@ namespace Assets.Inventory.Scripts
 
         public GameObject Use()
         {
-            var useItem = currentItem;
-            inventory.RemoveAt(0);
             if (inventory.Count < 5)
                 FillInventoryWithRandomItems();
+
+            var useItem = currentItem;
+            inventory.RemoveAt(0);
 
             currentItem = GetNextItem();
             RaiseItemSelected(currentItem);

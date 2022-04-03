@@ -11,12 +11,15 @@ namespace Assets.Tower
 {
     public interface ITowerHeightDetector
     {
+        float TowerHeight { get; }
         void RecalculateHeight(Vector3 newTowerItemPosition);
     }
 
     public class TowerHeightDetector : MonoBehaviour, ITowerHeightDetector
     {
         [SerializeField] float initialHeight = 2;
+        public float TowerHeight => currentTowerHeight;
+
         private float currentTowerHeight;
 
         private float minCheckTowerHeight;
@@ -55,34 +58,35 @@ namespace Assets.Tower
 
         private void FixedUpdate()
         {
-            if (ShouldRaiseMore())
+            if (ShouldDrop())
             {
-                RaiseMore();
+                DropOneStep();
             }
             else
             {
-                DropOneStep();
+                RaiseMore();
             }
 
             if (bestHeight > currentTowerHeight)
             {
                 currentTowerHeight = bestHeight;
-                minCheckTowerHeight = currentTowerHeight;
+                if (currentTowerHeight > minCheckTowerHeight)
+                {
+                    minCheckTowerHeight = currentTowerHeight;
+                }
             }
-
-            print($"currentTowerHeight: {currentTowerHeight}");
         }
 
-        private bool ShouldRaiseMore()
+        private bool ShouldDrop()
         {
-            if (currentTowerHeight < minCheckTowerHeight)
+            if (currentTowerHeight > minCheckTowerHeight)
             {
                 return true;
             }
 
             if (touchTowerCount <= 0)
             {
-                return transform.position.y <= currentTowerHeight;
+                return transform.position.y > currentTowerHeight;
             }
 
             return false;

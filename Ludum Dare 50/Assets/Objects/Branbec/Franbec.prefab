@@ -229,6 +229,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4471792613033429104}
   - component: {fileID: 8274727028021886856}
+  - component: {fileID: 1143771525388796499}
+  - component: {fileID: 2977827316905314295}
   m_Layer: 0
   m_Name: Franbec
   m_TagString: Untagged
@@ -264,6 +266,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b617857986c3f04dbf3ec6c5e0200aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &1143771525388796499
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3838526058930541258}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 2135c9acb82cfa74baaff5613c412342, type: 3}
+  m_Controller: {fileID: 9100000, guid: cbe62fbf9e9aed0448734566f30568ef, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2977827316905314295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3838526058930541258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cad1db0d09883fb499d9524899f003e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 1143771525388796499}
 --- !u!1 &4643660453989920361
 GameObject:
   m_ObjectHideFlags: 0

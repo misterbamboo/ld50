@@ -1,13 +1,18 @@
+using Assets.Audio;
 using Assets.Utils;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameOverController : MonoBehaviour
 {
+    private void Start()
+    {
+        AudioManager.instance.PlayMusic(KnownedMusics.village_sad_acoustic);
+    }
+
     public void Rejouer()
     {
+        AudioManager.instance.PlayMusic(KnownedMusics.night_tense_acoustic);
         SceneManager.LoadScene("MainScene");
     }
 

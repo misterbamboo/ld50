@@ -5,9 +5,10 @@ public class WaterRaising : MonoBehaviour
 {
     public void FixedUpdate()
     {
+        var floodHeight = GameManager.Instance.FloodLevel.FloodHeight;
         transform.position = new Vector3(
             x: transform.position.x,
-            y: GameManager.Instance.FloodLevel.FloodHeight,
+            y: float.IsInfinity(floodHeight) ? float.MaxValue : floodHeight,
             z: transform.position.z
         );
     }

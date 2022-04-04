@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace Assets.Inventory.Scripts
@@ -9,18 +10,20 @@ namespace Assets.Inventory.Scripts
         [SerializeField] private List<GameObject> possibleItems;
         [SerializeField] private List<GameObject> inventory;
         [SerializeField] private GameObject currentItem;
+        [SerializeField] private int inventoryStartingCount = 5;
 
         private void Start()
         {
             if (inventory == null)
+            {
                 inventory = new List<GameObject>();
-
+            }
             FillInventoryWithRandomItems();
         }
 
-        public event ItemSelectedHandler ItemSelected;
+        public event ItemSelectedHandler NextItemChanged;
 
-        public GameObject Peek() => currentItem;
+        public GameObject Peek() => inventory.FirstOrDefault();
 
         public void Add(GameObject item)
         {
@@ -28,37 +31,43 @@ namespace Assets.Inventory.Scripts
                 return;
 
             inventory?.Add(item);
+
+            if (inventory.Count == 1)
+            {
+                RaiseNextItemChanged(inventory[0]);
+            }
         }
 
-        public GameObject Use()
+        public GameObject PickNext()
         {
-            if (inventory.Count < 5)
-                FillInventoryWithRandomItems();
+            if (inventory.Count <= 0)
+            {
+                return null;
+            }
 
-            var useItem = currentItem;
+            var useItem = inventory.FirstOrDefault();
             inventory.RemoveAt(0);
 
-            currentItem = GetNextItem();
-            RaiseItemSelected(currentItem);
+            RaiseNextItemChanged(Peek());
 
             return useItem;
         }
 
         private void FillInventoryWithRandomItems()
         {
-            for (int i = 0; i < 10; i++)
+            if (inventoryStartingCount <= 0)
+            {
+                return;
+            }
+
+            for (int i = 0; i < inventoryStartingCount; i++)
             {
                 var random = UnityEngine.Random.Range(0, possibleItems.Count);
                 Add(possibleItems[random]);
             }
         }
 
-        private GameObject GetNextItem()
-        {
-            return inventory[0];
-        }
-
-        private void RaiseItemSelected(GameObject o) =>
-            ItemSelected?.Invoke(this, new ItemSelectedEventArgs(o));
+        private void RaiseNextItemChanged(GameObject o) =>
+            NextItemChanged?.Invoke(this, new ItemSelectedEventArgs(o));
     }
 }

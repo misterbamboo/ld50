@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 668247928781361849}
   - component: {fileID: 7661418906400826312}
   - component: {fileID: 571691447345762475}
+  - component: {fileID: 2225363499687363443}
   m_Layer: 7
   m_Name: FlamantRose
   m_TagString: Untagged
@@ -172,3 +173,15 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.21, y: 1.03, z: 0.76}
   m_Center: {x: 0.09, y: 0.94, z: 0.42}
+--- !u!114 &2225363499687363443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6417887370974572902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2a39c6b505fb52449911f3cafa88cec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

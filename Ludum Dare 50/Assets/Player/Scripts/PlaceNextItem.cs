@@ -1,6 +1,7 @@
 using Assets.GameManagement;
 using Assets.Inventory.Scripts;
 using Assets.SharedScripts;
+using Assets.Utils;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -62,14 +63,26 @@ public class PlaceNextItem : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            var itemPrefab = inventoryBag.Use();
-            var item = Instantiate(itemPrefab, spawnPoint.position, Random.rotation);
+            var itemPrefab = inventoryBag.PickNext();
+            if (itemPrefab == null)
+            {
+                return;
+            }
+
+            var item = Instantiate(itemPrefab, spawnPoint.position, Quaternion.identity);
             if (item.GetComponent<Rigidbody>() is Rigidbody rb)
             {
                 rb.AddForce(spawnPoint.forward * 350);
                 rb.AddTorque(Random.rotation.eulerAngles);
                 _isThrowingSignal = true;
             }
+
+            if (item.GetComponent<PickableItem>() is PickableItem pickableItem)
+            {
+                pickableItem.InitPrefab(itemPrefab);
+            }
+
+            ColliderUtils.ChangeCollidersTrigger(item, true);
         }
     }
 

@@ -18,11 +18,11 @@ namespace Assets.Camera.ItemCamera
 
         void Start()
         {
-            GameManager.Instance.InventoryBag.ItemSelected += InventoryBag_ItemSelected;
-            GameManager.Instance.InventoryBag.Use();
+            GameManager.Instance.InventoryBag.NextItemChanged += InventoryBag_NextItemChanged;
+            NextItemChanged();
         }
 
-        private void InventoryBag_ItemSelected(object sender, Inventory.Scripts.ItemSelectedEventArgs e)
+        private void InventoryBag_NextItemChanged(object sender, Inventory.Scripts.ItemSelectedEventArgs e)
         {
             NextItemChanged();
         }
@@ -45,9 +45,12 @@ namespace Assets.Camera.ItemCamera
         private void DisplayNextItem()
         {
             var nextItemPrefab = GameManager.Instance.InventoryBag.Peek();
-            currentDisplayedItem = GetOrCreateInstanceFromPrefab(nextItemPrefab);
-            LayerUtils.SetLayerRecursively(currentDisplayedItem.gameObject, KnownedLayers.ItemCamera);
-            currentDisplayedItem.SetActive(true);
+            if (nextItemPrefab != null)
+            {
+                currentDisplayedItem = GetOrCreateInstanceFromPrefab(nextItemPrefab);
+                LayerUtils.SetLayerRecursively(currentDisplayedItem.gameObject, KnownedLayers.ItemCamera);
+                currentDisplayedItem.SetActive(true);
+            }
         }
 
         private GameObject GetOrCreateInstanceFromPrefab(GameObject prefab)

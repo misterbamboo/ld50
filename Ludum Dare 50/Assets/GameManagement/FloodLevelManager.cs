@@ -29,7 +29,7 @@ namespace Assets.GameManagement
         {
             if (floodRaise)
             {
-                FloodHeight += GetFactor() * floodRaiseSpeed * Time.deltaTime;
+                FloodHeight  += GetFactor() * floodRaiseSpeed * Time.deltaTime;
             }
         }
 

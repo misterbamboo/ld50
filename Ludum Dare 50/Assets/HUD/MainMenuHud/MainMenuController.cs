@@ -14,8 +14,7 @@ public class MainMenuController : MonoBehaviour
 
     public void Play()
     {
-        AudioManager.instance.PlayMusic(KnownedMusics.night_tense_acoustic);
-        SceneManager.LoadScene("MainScene");
+        SceneManager.LoadScene("MainTuto");
     }
 
     public void Credits()

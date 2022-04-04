@@ -16,6 +16,16 @@ namespace Assets.SharedScripts
         public static int ItemCamera = LayerMask.NameToLayer("ItemCamera");
         public static int Item = LayerMask.NameToLayer("Item");
 
+        public static int GetTrowableSurfacesLayerMask()
+        {
+            int groundMask = 1 << Ground;
+            int waterMask = 1 << Water;
+            int towerMask = 1 << Tower;
+            int itemMask = 1 << Item;
+
+            return groundMask | waterMask | towerMask | itemMask;
+        }
+
         internal static bool IsGroundable(int layer)
         {
             return

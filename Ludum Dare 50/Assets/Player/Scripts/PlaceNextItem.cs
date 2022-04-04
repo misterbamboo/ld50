@@ -1,13 +1,16 @@
 using Assets.GameManagement;
 using Assets.Inventory.Scripts;
+using Assets.SharedScripts;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlaceNextItem : MonoBehaviour
 {
+    [SerializeField] Transform playerSpawnCenter;
     [SerializeField] Transform spawnPoint;
     private IInventoryBag inventoryBag;
+    private float spawnPointDistance;
 
     public bool IsThrowing { get; private set; }
 
@@ -16,9 +19,46 @@ public class PlaceNextItem : MonoBehaviour
     private void Start()
     {
         inventoryBag = GameManager.Instance.InventoryBag;
+        spawnPointDistance = (playerSpawnCenter.position - spawnPoint.position).magnitude;
     }
 
     private void Update()
+    {
+        FollowMousePos();
+        Throw();
+    }
+
+    private void FollowMousePos()
+    {
+        var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+        var combileLayerMask = KnownedLayers.GetTrowableSurfacesLayerMask();
+        if (Physics.Raycast(ray, out RaycastHit raycastHit, maxDistance: 50f, combileLayerMask))
+        {
+            var direction = raycastHit.point - playerSpawnCenter.position;
+            spawnPoint.rotation = GetNewSpawnRotation(direction);
+            spawnPoint.position = GetNewSpawnPos(raycastHit, direction);
+        }
+    }
+
+    private Quaternion GetNewSpawnRotation(Vector3 direction)
+    {
+        var euler = spawnPoint.rotation.eulerAngles;
+        euler.y = Quaternion.LookRotation(direction).eulerAngles.y;
+        return Quaternion.Euler(euler);
+    }
+
+    private Vector3 GetNewSpawnPos(RaycastHit raycastHit, Vector3 direction)
+    {
+
+        var clampPos = Vector3.ClampMagnitude(direction, spawnPointDistance);
+
+        var spawnPointNewPos = playerSpawnCenter.position + clampPos;
+        spawnPointNewPos.y = spawnPoint.position.y;
+        return spawnPointNewPos;
+    }
+
+    private void Throw()
     {
         if (Input.GetMouseButtonDown(0))
         {

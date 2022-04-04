@@ -16,6 +16,11 @@ public class StickyItem : MonoBehaviour
                 rb.isKinematic = true;
             }
 
+            if (transform.GetComponent<PickableItem>() is PickableItem pickableItem)
+            {
+                Destroy(pickableItem);
+            }
+
             LayerUtils.SetLayerRecursively(transform.gameObject, KnownedLayers.Tower);
             GameManager.Instance.ChangeTowerHeight(transform.position);
             EffectManager.Instance.SmokePoofAt(collision.contacts[0].point);

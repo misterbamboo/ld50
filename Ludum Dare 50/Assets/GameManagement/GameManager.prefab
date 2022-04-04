@@ -87,6 +87,7 @@ MonoBehaviour:
   - {fileID: 1959674453287512328, guid: 31b67a6a2a18f02409b7108a72e81b9b, type: 3}
   inventory: []
   currentItem: {fileID: 0}
+  inventoryStartingCount: 5
 --- !u!114 &2466028316403435371
 MonoBehaviour:
   m_ObjectHideFlags: 0

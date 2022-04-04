@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7677886096031689315}
   - component: {fileID: 5691097117911742549}
   - component: {fileID: 722560024949076034}
+  - component: {fileID: 5286781219892884807}
   m_Layer: 7
   m_Name: Parasol1
   m_TagString: Untagged
@@ -91,6 +92,18 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -7813038707494362028, guid: 0dc42c8a092fad2478d62246a018c008, type: 3}
+--- !u!114 &5286781219892884807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 212431723951442932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2a39c6b505fb52449911f3cafa88cec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4380474514949479309
 GameObject:
   m_ObjectHideFlags: 0

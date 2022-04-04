@@ -19,9 +19,9 @@ namespace Assets.Inventory.Scripts
         /// Retourne l'item choisi et le retire de l'inventaire.
         /// </summary>
         /// <returns></returns>
-        GameObject Use();
+        GameObject PickNext();
 
-        event ItemSelectedHandler ItemSelected;
+        event ItemSelectedHandler NextItemChanged;
     }
 
     public delegate void ItemSelectedHandler(object sender, ItemSelectedEventArgs e);

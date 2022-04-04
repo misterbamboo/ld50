@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8848690615065285906}
   - component: {fileID: 1474627162606199987}
   - component: {fileID: 7346266998243169528}
+  - component: {fileID: 4579066664365487067}
   m_Layer: 7
   m_Name: luge
   m_TagString: Untagged
@@ -127,3 +128,15 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -8144179678360686363, guid: 97dab6429d965c146b0db149bcf806bd, type: 3}
+--- !u!114 &4579066664365487067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4889087690284617130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2a39c6b505fb52449911f3cafa88cec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class FloatOnWater : MonoBehaviour
@@ -43,8 +44,15 @@ public class FloatOnWater : MonoBehaviour
 
     private void FixedUpdate()
     {
+        CleanDestroyedItems();
+
         foreach (var inWaterItem in inWaterItems)
         {
+            if (inWaterItem == null)
+            {
+                continue;
+            }
+
             var rb = inWaterItem.GetComponent<Rigidbody>();
 
             var diff = topPos.position.y - inWaterItem.transform.position.y;
@@ -55,6 +63,17 @@ public class FloatOnWater : MonoBehaviour
                 var yVelocity = rb.velocity.y * slowDownFactor;
                 rb.velocity = new Vector3(xVelocity, offsetDiff, yVelocity);
                 rb.angularVelocity = rb.angularVelocity * slowDownFactor;
+            }
+        }
+    }
+
+    private void CleanDestroyedItems()
+    {
+        for (int i = 0; i < inWaterItems.Count; i++)
+        {
+            if (inWaterItems[i] == null)
+            {
+                inWaterItems.RemoveAt(i);
             }
         }
     }

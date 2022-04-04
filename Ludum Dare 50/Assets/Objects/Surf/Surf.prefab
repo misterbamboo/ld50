@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6011826921888158475}
   - component: {fileID: 3849197155686006348}
   - component: {fileID: 8995027878368402037}
+  - component: {fileID: 7085570091737873052}
   m_Layer: 7
   m_Name: Surf
   m_TagString: Untagged
@@ -74,6 +75,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7b617857986c3f04dbf3ec6c5e0200aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7085570091737873052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1959674453287512328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2a39c6b505fb52449911f3cafa88cec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &7910162630345482372

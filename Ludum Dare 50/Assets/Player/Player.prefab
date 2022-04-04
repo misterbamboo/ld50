@@ -165,7 +165,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraTransform: {fileID: 0}
   Distance: 10
-  AngleXMin: 0
+  AngleXMin: 20
   AngleXMax: 89
   jumpForce: 350
   _groundDetector: {fileID: 5440116103849397064}

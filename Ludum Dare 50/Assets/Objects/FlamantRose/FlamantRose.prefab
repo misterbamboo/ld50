@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 731284130296292617}
   - component: {fileID: 7953004189262613049}
   - component: {fileID: 7081589265883771914}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: FlamantRose
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91,7 +91,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5934400859778051036}
-  m_Layer: 0
+  - component: {fileID: 2560936815032494214}
+  - component: {fileID: 668247928781361849}
+  - component: {fileID: 7661418906400826312}
+  - component: {fileID: 571691447345762475}
+  m_Layer: 7
   m_Name: FlamantRose
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -113,3 +117,58 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2560936815032494214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6417887370974572902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b617857986c3f04dbf3ec6c5e0200aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!54 &668247928781361849
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6417887370974572902}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &7661418906400826312
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6417887370974572902}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 8551571529679006307, guid: 787871a10a1e5b54e9a8f0d18f37d764, type: 3}
+--- !u!65 &571691447345762475
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6417887370974572902}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.21, y: 1.03, z: 0.76}
+  m_Center: {x: 0.09, y: 0.94, z: 0.42}

@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 6224956798889808782}
   - component: {fileID: 7047190789456518187}
   - component: {fileID: 5055380632690305249}
+  - component: {fileID: 5633306344633866408}
   m_Layer: 0
-  m_Name: montagne
+  m_Name: Montagne
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -82,3 +83,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &5633306344633866408
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6712806107192658228}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -4326185773734619481, guid: 13c69434bfcfc884b8856073631bc210, type: 3}

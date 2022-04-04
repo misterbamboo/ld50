@@ -1,11 +1,25 @@
 using Assets.Player.Scripts.TPController.Default;
 using Assets.Player.Scripts.TPController.GroundDetection;
+using Assets.Player.Scripts.WaterDetection;
 using UnityEngine;
 using UPTK.TPController.Default;
 
 namespace UPTK.TPController
 {
-    public class TPController : MonoBehaviour
+    public interface ITPController
+    {
+        bool IsJumping { get; }
+
+        bool IsMoving { get; }
+
+        bool IsGrounded { get; }
+
+        bool IsFalling { get; }
+
+        bool IsSwiming { get; }
+    }
+
+    public class TPController : MonoBehaviour, ITPController
     {
         [Header("Camera")]
         [SerializeField] private ICameraInput cameraInput;
@@ -21,10 +35,22 @@ namespace UPTK.TPController
         [Header("Jump")]
         [SerializeField] private IJumpInput jumpInput;
         [SerializeField] private GroundDetector _groundDetector;
-
         private IGroundDetector groundDetector => _groundDetector;
 
+        [Header("Swim")]
+        [SerializeField] private WaterDetection _waterDetector;
+        private IWaterDetector waterDetector => _waterDetector;
+
+
+        public bool IsJumping { get; private set; }
+        public bool IsMoving { get; private set; }
+        public bool IsGrounded => groundDetector.IsGrounded;
+        public bool IsFalling { get; private set; }
+        public bool IsSwiming => waterDetector.IsInWater;
+
+
         private Rigidbody rbody;
+        private float lastY;
 
         void Start()
         {
@@ -64,10 +90,21 @@ namespace UPTK.TPController
 
         void FixedUpdate()
         {
+            FrameReset();
+
             PlaceCameraAroundPlayer();
             Move();
             Jump();
             ChangeCameraAngle();
+            CheckFalling();
+        }
+
+        private void FrameReset()
+        {
+            IsJumping = false;
+            IsMoving = false;
+            // IsGrounded = false;
+            IsFalling = false;
         }
 
         private void PlaceCameraAroundPlayer()
@@ -82,24 +119,51 @@ namespace UPTK.TPController
         {
             var rotatedMovement = movementInput.GetRotatedMovement(cameraInput.CurrentYAngle);
             movementInput.ApplyMovement(rotatedMovement);
+
+            IsMoving = rotatedMovement.magnitude > 0.01f;
         }
 
         private void Jump()
         {
             if (jumpInput.JumpPressed())
             {
-                if (groundDetector.IsGrounded && rbody != null)
+                if (CanJump())
                 {
                     groundDetector.Unground();
-                    rbody.AddForce(Vector3.up * jumpForce);
+
+                    // Add force only when not already going up
+                    if (rbody.velocity.y < 0.1f)
+                    {
+                        rbody.AddForce(Vector3.up * jumpForce);
+                        IsJumping = true;
+                    }
                 }
             }
+        }
+
+        private bool CanJump()
+        {
+            return (IsSwiming || IsGrounded) && rbody != null;
         }
 
         private void ChangeCameraAngle()
         {
             Vector3 targetDirection = transform.position - cameraTransform.position;
             cameraTransform.rotation = Quaternion.LookRotation(targetDirection);
+        }
+
+        private void CheckFalling()
+        {
+            if (!groundDetector.IsGrounded)
+            {
+                var isFalling = transform.position.y - lastY < -0.01f;
+                if (isFalling)
+                {
+                    IsFalling = true;
+                }
+            }
+
+            lastY = transform.position.y;
         }
     }
 }

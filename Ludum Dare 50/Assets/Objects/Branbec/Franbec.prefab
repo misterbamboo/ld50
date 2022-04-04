@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2521683729715184051}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: joint15
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3840927589823984371}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: joint3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70,7 +70,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1537155947492934616}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: joint12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101,7 +101,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 778074771104490981}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: joint11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -132,7 +132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4544239682854403581}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: joint5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -165,7 +165,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4590862343384149745}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: joint18
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -195,7 +195,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4533369416808826173}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: joint13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -231,7 +231,7 @@ GameObject:
   - component: {fileID: 8274727028021886856}
   - component: {fileID: 1143771525388796499}
   - component: {fileID: 2977827316905314295}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Franbec
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -298,6 +298,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 1143771525388796499}
+  isJumping: 0
+  isGrounded: 0
+  isFalling: 0
+  isMoving: 0
+  isSwimming: 0
+  isThrowing: 0
 --- !u!1 &4643660453989920361
 GameObject:
   m_ObjectHideFlags: 0
@@ -307,7 +313,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3612535214071340367}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: joint7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -337,7 +343,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5400987843645569296}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: joint1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -368,7 +374,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7483182901607624245}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: joint10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -399,7 +405,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3115090514466271847}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: joint4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -429,7 +435,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1696776389122717159}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: joint16
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -460,7 +466,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5678569271713846768}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: joint14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -491,7 +497,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3121404598054427588}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: joint6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -523,7 +529,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7858978564343997365}
   - component: {fileID: 599160771600881840}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Franbec
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -626,7 +632,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8679115903512782098}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: joint17
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -657,7 +663,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6770524895657263286}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: joint2
   m_TagString: Untagged
   m_Icon: {fileID: 0}

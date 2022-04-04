@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4306794245870855695}
   - component: {fileID: 7703709872864113711}
   - component: {fileID: 7094660849481520749}
+  - component: {fileID: 8298142202614815902}
   m_Layer: 7
   m_Name: Surf
   m_TagString: Untagged
@@ -61,6 +62,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!64 &8298142202614815902
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3499048561556094133}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 3463793710406994063, guid: b66e35b4b6180754b972412c0bcd68e9, type: 3}
 --- !u!1 &5078860435297908025
 GameObject:
   m_ObjectHideFlags: 0
@@ -72,7 +87,6 @@ GameObject:
   - component: {fileID: 6948085021788243491}
   - component: {fileID: 1775001652903304880}
   - component: {fileID: 8992213106218939391}
-  - component: {fileID: 1262880373597252508}
   m_Layer: 7
   m_Name: planche_Surf
   m_TagString: Untagged
@@ -144,17 +158,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &1262880373597252508
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5078860435297908025}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 3463793710406994063, guid: b66e35b4b6180754b972412c0bcd68e9, type: 3}

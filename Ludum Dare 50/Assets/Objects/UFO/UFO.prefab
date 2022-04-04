@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 6810702069233847183}
   - component: {fileID: 1184615021925930310}
   - component: {fileID: 251883387610098140}
-  - component: {fileID: 6210913366072484220}
   m_Layer: 7
   m_Name: UFO 1
   m_TagString: Untagged
@@ -83,20 +82,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &6210913366072484220
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4092859830088858477}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 7810371007003685382, guid: 565e1a3a8c8763b429604ce40a268e59, type: 3}
 --- !u!1 &6501248352563401825
 GameObject:
   m_ObjectHideFlags: 0
@@ -108,6 +93,7 @@ GameObject:
   - component: {fileID: 5868966856925302491}
   - component: {fileID: 1993373139121283008}
   - component: {fileID: 7983664585749709110}
+  - component: {fileID: 7683735263795220771}
   m_Layer: 7
   m_Name: UFO
   m_TagString: Untagged
@@ -158,3 +144,17 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!64 &7683735263795220771
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6501248352563401825}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 7810371007003685382, guid: 565e1a3a8c8763b429604ce40a268e59, type: 3}

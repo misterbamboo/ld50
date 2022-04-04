@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 5447522502734694856}
   - component: {fileID: 7799412492309580417}
   - component: {fileID: 375721366547353377}
-  - component: {fileID: 3677109759559409451}
   m_Layer: 7
   m_Name: Rock_1
   m_TagString: Untagged
@@ -83,20 +82,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &3677109759559409451
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2854863689346580039}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -2605931710798131250, guid: 45fe193054fefb64786a7fa17a06eac0, type: 3}
 --- !u!1 &5894085002978223050
 GameObject:
   m_ObjectHideFlags: 0
@@ -108,6 +93,7 @@ GameObject:
   - component: {fileID: 6521264729443875184}
   - component: {fileID: 4987058366755542317}
   - component: {fileID: 3025088620350820681}
+  - component: {fileID: 2715631445958364301}
   m_Layer: 7
   m_Name: Rock_1
   m_TagString: Untagged
@@ -158,3 +144,17 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!64 &2715631445958364301
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5894085002978223050}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -2605931710798131250, guid: 45fe193054fefb64786a7fa17a06eac0, type: 3}

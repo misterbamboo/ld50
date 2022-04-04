@@ -26,7 +26,7 @@ public class FloodLevelHudController : MonoBehaviour
     {
         var height = GetMaxGameHeight();
         UpdateTowerRectUIHeight(height);
-        UpdateWaterRectUIHeight(height);
+        UpdateWaterRectUIHeight2(height);
         UpdatePlayerUIHeight(height);
     }
 
@@ -42,6 +42,17 @@ public class FloodLevelHudController : MonoBehaviour
         var waterScale = waterRect.localScale;
         waterScale.y = floodLevel.FloodHeight / height;
         waterRect.localScale = waterScale;
+    }
+
+    private void UpdateWaterRectUIHeight2(float height)
+    {
+        var waterOffsetMax = waterRect.offsetMax;
+        // here it's in pixed due to anchor
+        var heightRatio = 1 - (floodLevel.FloodHeight / height);
+        var uiHeight = mask.rect.height;
+
+        waterOffsetMax.y = -heightRatio * uiHeight;
+        waterRect.offsetMax = waterOffsetMax;
     }
 
     private void UpdatePlayerUIHeight(float height)

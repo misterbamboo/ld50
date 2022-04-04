@@ -9,12 +9,16 @@ public class PlaceNextItem : MonoBehaviour
     [SerializeField] Transform spawnPoint;
     private IInventoryBag inventoryBag;
 
+    public bool IsThrowing { get; private set; }
+
+    private bool _isThrowingSignal;
+
     private void Start()
     {
         inventoryBag = GameManager.Instance.InventoryBag;
     }
 
-    void Update()
+    private void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
@@ -24,7 +28,30 @@ public class PlaceNextItem : MonoBehaviour
             {
                 rb.AddForce(spawnPoint.forward * 350);
                 rb.AddTorque(Random.rotation.eulerAngles);
+                _isThrowingSignal = true;
             }
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        RaiseThrowing();
+    }
+
+    private void RaiseThrowing()
+    {
+        if (_isThrowingSignal && !IsThrowing)
+        {
+            IsThrowing = true;
+        }
+    }
+
+    public void ResetIsThrowing()
+    {
+        if (_isThrowingSignal && IsThrowing)
+        {
+            _isThrowingSignal = false;
+            IsThrowing = false;
         }
     }
 }

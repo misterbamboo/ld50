@@ -33,7 +33,11 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - FoamTexture:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 0c9dd72f96184f849a545276f32adf1a, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - NoiseTexture:
+        m_Texture: {fileID: 2800000, guid: 8ff456ceb6ec9b1438a3f6ed53e9f63f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseMap:
@@ -94,9 +98,13 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - Depth: 19.2
-    - DepthFalloff: 56.8
-    - FoamShoreWidth: 17.68
+    - Depth: 35.1
+    - DepthFalloff: 91.1
+    - FoamDepth: -35.75
+    - FoamFalloff: -28.85
+    - FoamShoreWidth: 15.5
+    - FoamTiling: 1.16
+    - NoiseTiling: 2.47
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
@@ -124,8 +132,10 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - FoamColor: {r: 1, g: 1, b: 1, a: 0}
-    - MainColor: {r: 0.051619805, g: 0.34349763, b: 0.3773585, a: 0}
+    - FoamColor: {r: 0.40334642, g: 0.8263083, b: 0.8301887, a: 1}
+    - FoamSpeed: {r: 0.02, g: 0.11, b: 0, a: 0}
+    - MainColor: {r: 0.15294118, g: 0.427451, b: 0.45882356, a: 0}
+    - NoiseSpeed: {r: 0.2, g: 0.03, b: 0, a: 0}
     - ShoreColor: {r: 1, g: 1, b: 1, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}

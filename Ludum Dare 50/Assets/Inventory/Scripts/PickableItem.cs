@@ -6,19 +6,20 @@ using UnityEngine;
 
 public class PickableItem : MonoBehaviour
 {
-    [SerializeField] float distanceToBecomePickable = 2;
-    [SerializeField] bool isPickable = false;
+    float distanceToBecomePickable = 2;
+    bool isPickable = false;
     private Transform player;
-    private IInventoryBag nventoryBag;
+    private IInventoryBag inventoryBag;
     private GameObject itemPrefab;
 
     private void Start()
     {
-        player = GameObject.Find("Player").transform;
-        nventoryBag = GameManager.Instance.InventoryBag;
+        player = GameObject.FindWithTag("Player").transform;
+        inventoryBag = GameManager.Instance.InventoryBag;
+        isPickable = false;
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         if (isPickable) return;
         CheckIfBecomePickable();
@@ -38,7 +39,7 @@ public class PickableItem : MonoBehaviour
     {
         if (isPickable && collision.gameObject.layer == KnownedLayers.Player)
         {
-            nventoryBag.Add(itemPrefab);
+            inventoryBag.Add(itemPrefab);
             Destroy(gameObject);
         }
     }

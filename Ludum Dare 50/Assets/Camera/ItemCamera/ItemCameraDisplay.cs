@@ -70,6 +70,10 @@ namespace Assets.Camera.ItemCamera
             {
                 Destroy(rb);
             }
+            if (instance.GetComponent<PickableItem>() is PickableItem pickableItem)
+            {
+                Destroy(pickableItem);
+            }
             return instance;
         }
 

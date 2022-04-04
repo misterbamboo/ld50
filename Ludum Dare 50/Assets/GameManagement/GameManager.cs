@@ -9,6 +9,7 @@ namespace Assets.GameManagement
     {
         IInventoryBag InventoryBag { get; }
         IFloodLevel FloodLevel { get; }
+        ITowerHeightDetector TowerHeightDetector { get; }
 
         event Action OnGameStart;
         event Action OnGameOver;

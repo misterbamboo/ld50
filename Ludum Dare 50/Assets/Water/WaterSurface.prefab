@@ -132,17 +132,6 @@ MonoBehaviour:
   FloatOnWater: {fileID: 3783732640301526888}
   dispersionForce: 3
   spawnSpeed: 2
-  spawnPoints:
-  - {fileID: 200868902660655603}
-  - {fileID: 6466671185406381362}
-  - {fileID: 2770156622399173360}
-  - {fileID: 2506984493384133095}
-  - {fileID: 9202172817520014888}
-  - {fileID: 2231050638332941376}
-  - {fileID: 5447014910529433173}
-  - {fileID: 9055286312147329354}
-  - {fileID: 7637560961329531070}
-  - {fileID: 8731310355093654242}
   possiblePrefab:
   - {fileID: 8509816744436684030, guid: 694b02fc5279aaa4fb5c43cb22fca6af, type: 3}
   - {fileID: 1419481856701481191, guid: 89325af2fe9f8ed4abc67203d6c2122a, type: 3}
@@ -404,7 +393,7 @@ MonoBehaviour:
   slowDownFactor: 0.985
   sinWave: 0.2
   sinWaveSpeed: 2
-  topOffset: 0.3
+  topOffset: 0.2
   topPos: {fileID: 3225019499406155217}
 --- !u!1 &6419196733746098729
 GameObject:

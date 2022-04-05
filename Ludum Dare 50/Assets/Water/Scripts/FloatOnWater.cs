@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class FloatOnWater : MonoBehaviour
 {
-
     [SerializeField] float slowDownFactor = 0.985f;
 
     [SerializeField] float sinWave = 0.2f;
@@ -28,9 +27,14 @@ public class FloatOnWater : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.GetComponent<Rigidbody>() != null)
+        AddInFloatingWater(other.gameObject);
+    }
+
+    public void AddInFloatingWater(GameObject item)
+    {
+        if (item.GetComponent<Rigidbody>() != null)
         {
-            inWaterItems.Add(other.gameObject);
+            inWaterItems.Add(item);
         }
     }
 

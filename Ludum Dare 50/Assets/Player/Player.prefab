@@ -145,6 +145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfdcf508de0047f45b04ba58d34d8fb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  needKeyPress: 1
 --- !u!54 &2783940208144229468
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -11,7 +11,9 @@ GameObject:
   - component: {fileID: 2657093533727571758}
   - component: {fileID: 312723813092578306}
   - component: {fileID: 9013915992321794223}
-  - component: {fileID: 2250047440504232425}
+  - component: {fileID: 3116889636950585707}
+  - component: {fileID: 8695956708158277675}
+  - component: {fileID: 1116681055022936557}
   m_Layer: 7
   m_Name: Avion
   m_TagString: Untagged
@@ -57,10 +59,37 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -1066942415216993447, guid: 2c1e35a1b86379447b03781a4e03f30f, type: 3}
---- !u!54 &2250047440504232425
+--- !u!114 &3116889636950585707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3428423289366766996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 408015e4c7d119d46abac962b3f6bc94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 30
+  speed: 1
+--- !u!114 &8695956708158277675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3428423289366766996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfdcf508de0047f45b04ba58d34d8fb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  needKeyPress: 0
+--- !u!54 &1116681055022936557
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -74,7 +103,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 80
+  m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!1 &8984324312271067372
 GameObject:

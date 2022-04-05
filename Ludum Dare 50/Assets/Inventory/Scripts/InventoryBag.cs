@@ -32,7 +32,7 @@ namespace Assets.Inventory.Scripts
 
             inventory?.Add(item);
 
-            if (inventory.Count == 1)
+            if (inventory.Count > 0)
             {
                 RaiseNextItemChanged(inventory[0]);
             }

@@ -13,6 +13,7 @@ namespace Assets.Player.Scripts
     {
         private Vector3 lastFlatPos;
         private bool isDestroyed;
+        [SerializeField] bool needKeyPress = false;
 
         private void Start()
         {
@@ -46,7 +47,7 @@ namespace Assets.Player.Scripts
 
         private bool CanRotate(Vector3 direction)
         {
-            return direction.magnitude > 0.01f && Input.anyKey;
+            return direction.magnitude > 0.01f && (needKeyPress ? Input.anyKey : true);
         }
 
         private void OnDestroy()
